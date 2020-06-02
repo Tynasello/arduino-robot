@@ -4,7 +4,7 @@
  */
 
 
-#include <AFMotor.h> //for motots
+#include <AFMotor.h> //for motors
 #include <NewPing.h> //for ultrasonic sensor
 #include <SoftwareSerial.h> //for bluetooth pin configuration
 
@@ -15,12 +15,12 @@
 #define bluetooth_RX_Pin 0 //pin receives serial data
 #define bluetooth_TX_Pin 1 //pin transmits serial data
 
-SoftwareSerial bluetoothSerial(bluetooth_RX_Pin, bluetooth_TX_Pin);//bluetooth serial object
+SoftwareSerial bluetoothSerial(bluetooth_RX_Pin, bluetooth_TX_Pin);
 
-NewPing sonar(triggerPin,echoPin, maxDistance);//sonar object
+NewPing sonar(triggerPin,echoPin, maxDistance);
 
 AF_DCMotor topl(3);//topleft motor
-AF_DCMotor topr(1);//topright motots
+AF_DCMotor topr(1);//topright motor
 
   
 void setup() {
@@ -112,7 +112,7 @@ void smallLeft(){
   Serial.println("Small Turn to Left");
 }
 void autonomous(){ //autonomous mode
-  char in = bluetoothSerial.read();//reads character in
+  char in = bluetoothSerial.read();
   while(true){
     int objClose = 10; //creates variable used for maxdistance robot can be from an object
     char in = bluetoothSerial.read();//reads character in
